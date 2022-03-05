@@ -13,6 +13,10 @@
 		DABF894127B4CE2700667250 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DABF893F27B4CE2700667250 /* Main.storyboard */; };
 		DABF894327B4CE2D00667250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DABF894227B4CE2D00667250 /* Assets.xcassets */; };
 		DABF894627B4CE2D00667250 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DABF894427B4CE2D00667250 /* LaunchScreen.storyboard */; };
+		DABF894F27B4D63700667250 /* RandomAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABF894E27B4D63700667250 /* RandomAPIResponse.swift */; };
+		DABF895227B62A6900667250 /* DogsAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABF895127B62A6900667250 /* DogsAPIService.swift */; };
+		DABF895427B62AB100667250 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABF895327B62AB100667250 /* Constants.swift */; };
+		DABF895627B653A600667250 /* BreedsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABF895527B653A600667250 /* BreedsAPIResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		DABF894227B4CE2D00667250 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DABF894527B4CE2D00667250 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DABF894727B4CE2D00667250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DABF894E27B4D63700667250 /* RandomAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomAPIResponse.swift; sourceTree = "<group>"; };
+		DABF895127B62A6900667250 /* DogsAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsAPIService.swift; sourceTree = "<group>"; };
+		DABF895327B62AB100667250 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DABF895527B653A600667250 /* BreedsAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsAPIResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,8 @@
 		DABF893827B4CE2700667250 /* DogPhotos */ = {
 			isa = PBXGroup;
 			children = (
+				DABF895027B62A4C00667250 /* Services */,
+				DABF894D27B4D60100667250 /* Models */,
 				DABF893927B4CE2700667250 /* AppDelegate.swift */,
 				DABF893B27B4CE2700667250 /* SceneDelegate.swift */,
 				DABF893D27B4CE2700667250 /* ViewController.swift */,
@@ -63,8 +73,26 @@
 				DABF894227B4CE2D00667250 /* Assets.xcassets */,
 				DABF894427B4CE2D00667250 /* LaunchScreen.storyboard */,
 				DABF894727B4CE2D00667250 /* Info.plist */,
+				DABF895327B62AB100667250 /* Constants.swift */,
 			);
 			path = DogPhotos;
+			sourceTree = "<group>";
+		};
+		DABF894D27B4D60100667250 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DABF894E27B4D63700667250 /* RandomAPIResponse.swift */,
+				DABF895527B653A600667250 /* BreedsAPIResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DABF895027B62A4C00667250 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DABF895127B62A6900667250 /* DogsAPIService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +166,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DABF895227B62A6900667250 /* DogsAPIService.swift in Sources */,
+				DABF894F27B4D63700667250 /* RandomAPIResponse.swift in Sources */,
 				DABF893E27B4CE2700667250 /* ViewController.swift in Sources */,
 				DABF893A27B4CE2700667250 /* AppDelegate.swift in Sources */,
 				DABF893C27B4CE2700667250 /* SceneDelegate.swift in Sources */,
+				DABF895627B653A600667250 /* BreedsAPIResponse.swift in Sources */,
+				DABF895427B62AB100667250 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

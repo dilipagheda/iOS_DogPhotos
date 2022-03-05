@@ -1,24 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DogPhotos" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lfT-un-eVP">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S3d-5G-79Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="Eb6-NO-v5c"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="GiB-u2-vvR"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="uap-Lc-Go3"/>
+                                        </connections>
+                                    </pickerView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h5V-5J-1Pc" userLabel="ImageViewContainer">
+                                        <rect key="frame" x="0.0" y="200" width="414" height="562"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h7J-iy-3qL">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="562"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="h7J-iy-3qL" secondAttribute="trailing" id="VrM-aJ-sKd"/>
+                                            <constraint firstAttribute="bottom" secondItem="h7J-iy-3qL" secondAttribute="bottom" id="Ykx-qG-63n"/>
+                                            <constraint firstItem="h7J-iy-3qL" firstAttribute="top" secondItem="h5V-5J-1Pc" secondAttribute="top" id="cCR-Qf-psg"/>
+                                            <constraint firstItem="h7J-iy-3qL" firstAttribute="leading" secondItem="h5V-5J-1Pc" secondAttribute="leading" id="e9p-0B-rSq"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4EF-Yw-i5P" userLabel="PhotoButtonContainer">
+                                        <rect key="frame" x="0.0" y="762" width="414" height="56"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UUV-jc-gPv">
+                                                <rect key="frame" x="136" y="12.5" width="142" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Get another photo"/>
+                                                <connections>
+                                                    <action selector="onClickGetPhotoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wX5-ON-LoU"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="UUV-jc-gPv" firstAttribute="centerY" secondItem="4EF-Yw-i5P" secondAttribute="centerY" id="bc8-hY-60K"/>
+                                            <constraint firstAttribute="height" constant="56" id="dDn-uj-8Sq"/>
+                                            <constraint firstItem="UUV-jc-gPv" firstAttribute="centerX" secondItem="4EF-Yw-i5P" secondAttribute="centerX" id="dUm-Eb-TPJ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="4EF-Yw-i5P" secondAttribute="bottom" id="2kk-PF-72m"/>
+                                    <constraint firstItem="h5V-5J-1Pc" firstAttribute="leading" secondItem="lfT-un-eVP" secondAttribute="leading" id="4k6-Ul-LX8"/>
+                                    <constraint firstItem="h5V-5J-1Pc" firstAttribute="leading" secondItem="lfT-un-eVP" secondAttribute="leading" id="6yu-Qz-h0L"/>
+                                    <constraint firstItem="4EF-Yw-i5P" firstAttribute="leading" secondItem="lfT-un-eVP" secondAttribute="leading" id="UG2-Z9-8SF"/>
+                                    <constraint firstAttribute="trailing" secondItem="4EF-Yw-i5P" secondAttribute="trailing" id="c6k-6s-2MP"/>
+                                    <constraint firstAttribute="bottom" secondItem="4EF-Yw-i5P" secondAttribute="bottom" id="dJy-xW-Lb8"/>
+                                    <constraint firstAttribute="trailing" secondItem="h5V-5J-1Pc" secondAttribute="trailing" id="pwb-3c-gFI"/>
+                                    <constraint firstItem="h5V-5J-1Pc" firstAttribute="top" secondItem="S3d-5G-79Z" secondAttribute="bottom" id="x73-9L-qLB"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lfT-un-eVP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ITz-rd-z4R"/>
+                            <constraint firstItem="lfT-un-eVP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bfm-kn-7Yk"/>
+                            <constraint firstItem="lfT-un-eVP" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="q7q-cZ-vza"/>
+                            <constraint firstItem="lfT-un-eVP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qQT-3B-gtZ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="getPhotoButton" destination="UUV-jc-gPv" id="90t-oV-1NQ"/>
+                        <outlet property="imageView" destination="h7J-iy-3qL" id="dEh-fI-wlQ"/>
+                        <outlet property="pickerView" destination="S3d-5G-79Z" id="aZK-cI-cte"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="95.758928571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
